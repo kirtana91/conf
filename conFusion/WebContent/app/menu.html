@@ -55,7 +55,7 @@
 
 				<div class="tab-content">
 					<ul class="media-list tab-pane fade in active">
-						<li class="media" ng-repeat="dish in menuCtrl.dishes">
+						<li class="media" ng-repeat="dish in menuCtrl.dishes | filter:menuCtrl.filtText">
 							<div class="media-left media-middle">
 								<a href="#"> <img class="media-object img-thumbnail"
 									ng-src={{dish.image}} alt="Uthappizza">
@@ -86,6 +86,7 @@
 		app.controller('menuController',function() {
 
 			this.tab = 1;
+			this.filtText = '';
 			var dishes = [
 				{
 					name : 'Uthapizza',
