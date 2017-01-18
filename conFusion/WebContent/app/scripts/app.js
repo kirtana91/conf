@@ -1,6 +1,5 @@
-var app = angular.module('confusionApp', []);
-
-		app.controller('menuController',function() {
+'use strict';
+angular.module('confusionApp', []).controller('menuController', function() {
 
 			this.tab = 1;
 			this.filtText = '';
