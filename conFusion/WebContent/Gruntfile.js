@@ -127,7 +127,12 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', [
 		'clean',
 		'jshint',
-		'copy'
+		'useminPrepare',
+		'concat',
+		'cssmin',
+		'uglify',
+		'copy',
+		'filerev',
 		]);
 
 		grunt.registerTask('default',['build']);
