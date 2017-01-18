@@ -65,7 +65,52 @@ module.exports = function (grunt) {
 			  }
 			},
 
+			useminPrepare: {
+				  html: 'app/menu.html',
+				  options: {
+				    dest: 'dist'
+				  }
+				},
 
+				// Concat
+				concat: {
+				  options: {
+				    separator: ';'
+				  },
+
+				  // dist configuration is provided by useminPrepare
+				  dist: {}
+				},
+
+				// Uglify
+				uglify: {
+				  // dist configuration is provided by useminPrepare
+				  dist: {}
+				},
+
+				cssmin: {
+				  dist: {}
+				},
+
+				// Filerev
+				filerev: {
+				  options: {
+				    encoding: 'utf8',
+				    algorithm: 'md5',
+				    length: 20
+				  },
+
+				  release: {
+				    // filerev:release hashes(md5) all assets (images, js and css )
+				    // in dist directory
+				    files: [{
+				      src: [
+				        'dist/scripts/*.js',
+				        'dist/styles/*.css',
+				      ]
+				    }]
+				  }
+				},
 
 	});
 	grunt.registerTask('build', [
