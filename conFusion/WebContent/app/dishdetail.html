@@ -24,7 +24,7 @@
 	<div class="container">
 		<div class="row row-content" ng-controller="dishDetailController as dishCtrl">
 			<div class="col-xs-12">
-								<ul class="media-list">
+				<ul class="media-list">
 					<li class="media" ng-repeat="dish in dishCtrl.dishes">
 						<div class="media-left media-middle">
 							<a href="#"> <img class="media-object img-thumbnail"
@@ -37,11 +37,24 @@
 								<span class="badge">{{dish.price | currency}}</span>
 							</h2>
 							<p>{{dish.description}}</p>
+							<p>Comment: {{dish.comment}}</p>
+							<p>
+								Type your comment: <input type="text" ng-model="dish.comment">
+							</p>
 						</div>
 					</li>
 				</ul>
 			</div>
-			<div class="col-xs-9 col-cs-offset-1"></div>
+			<div class="col-xs-9 col-cs-offset-1">
+				<blockquote>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Integer posuere erat a ante.</p>
+					<footer>
+						Someone famous in <cite title="Source Title">Source Title</cite>
+					</footer>
+				</blockquote>
+
+			</div>
 		</div>
 
 		<script src="../bower_components/angular/angular.min.js"></script>
