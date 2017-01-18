@@ -109,6 +109,17 @@ module.exports = function (grunt) {
 				        'dist/styles/*.css',
 				      ]
 				    }]
+				  },
+
+				// Usemin
+				// Replaces all assets with their revved version in html and css files.
+				// options.assetDirs contains the directories for finding the assets
+				// according to their relative paths
+				usemin: {
+				  html: ['dist/*.html'],
+				  css: ['dist/styles/*.css'],
+				  options: {
+				    assetsDirs: ['dist', 'dist/styles']
 				  }
 				},
 
