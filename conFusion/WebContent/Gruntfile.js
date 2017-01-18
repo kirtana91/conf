@@ -27,5 +27,10 @@ module.exports = function (grunt) {
 		    }
 		  }
 
-  });
+	});
+	grunt.registerTask('build', [
+		  'jshint'
+		]);
+
+		grunt.registerTask('default',['build']);
 };
