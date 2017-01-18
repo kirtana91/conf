@@ -6,7 +6,10 @@ module.exports = function (grunt) {
 	require('time-grunt')(grunt);
 
 	// Automatically load required Grunt tasks
-	require('jit-grunt')(grunt);
+	require('jit-grunt')(grunt, {
+		useminPrepare: 'grunt-usemin'
+		});
+
 
 	// Define the configuration for all the tasks
 	grunt.initConfig({
@@ -60,7 +63,9 @@ module.exports = function (grunt) {
 			  build: {
 			    src: [ 'dist/']
 			  }
-			}
+			},
+
+
 
 	});
 	grunt.registerTask('build', [
